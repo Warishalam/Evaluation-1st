@@ -9,13 +9,13 @@ const dns=require("dns");
 
 function getMeIp(req,res){
     const body=req.body;
-    const url=body.masaischool.com;
+    const url=body.website_name;
     dns.resolve4(url,(err,addresses)=>{
         if(err){
             console.err(err);
             return;
         }
-        res.status(2000).send(addresses[0])
+        res.status(200).send(addresses[0])
     });
 }
 
